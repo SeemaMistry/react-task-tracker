@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Header } from "./components/Header";
 import { Tasks } from "./components/Tasks";
+import { Task } from './components/Task';
 
 function App() {
 
@@ -26,10 +27,15 @@ function App() {
         }
     ])
 
+  // Delete Task
+  const deleteTask = (id) => {
+    console.log('delete', id)
+  }
+
   return (
     <div className="container">
       <Header title="Task Tracker"/>
-      <Tasks tasks={tasks}/>
+      <Tasks tasks={tasks} onDelete={deleteTask}/>
 
     </div>
   );
