@@ -6,7 +6,7 @@ export const Task = ({ task, onDelete }) => {
             <h3 key={task.id}>
                 {task.text} 
                 <FaTimes style={{color: 'red', cursor: 'pointer'}}
-                    onClick={onDelete}
+                    onClick={() => onDelete(task.id)}
                 />
                 </h3>
             <p>{task.day}</p>
