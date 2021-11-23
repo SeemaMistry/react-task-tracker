@@ -1,14 +1,14 @@
 import {FaTimes} from 'react-icons/fa'
 
-export const Task = ({ task, onDelete }) => {
+export const Task = ({ task, onDelete, onDbClick }) => {
     return (
-        <div className='task'>
-            <h3 key={task.id}>
+        <div key={task.id} className={`task ${task.reminder ? "reminder" : ""}`} onDoubleClick={() => onDbClick(task.id)}>
+            <h3>
                 {task.text} 
                 <FaTimes style={{color: 'red', cursor: 'pointer'}}
-                    onClick={() => onDelete(task.id)}
+                    onClick={() => onDelete(task.id)}  
                 />
-                </h3>
+            </h3>
             <p>{task.day}</p>
         </div>
     )
